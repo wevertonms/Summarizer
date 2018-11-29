@@ -1,0 +1,162 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Welcome to Summarizer’s documentation! &#8212; Summarizer 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-summarizer-s-documentation">
+<h1>Welcome to Summarizer’s documentation!<a class="headerlink" href="#welcome-to-summarizer-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-Summarizer"></span><p>Simple-Summarizer
+A very simple summarizer built using NLP in Python
+<a class="reference external" href="https://jodylecompte.com">https://jodylecompte.com</a>
+<a class="reference external" href="https://github.com/jodylecompte/Simple-Summarizer">https://github.com/jodylecompte/Simple-Summarizer</a></p>
+<dl class="function">
+<dt id="Summarizer.main">
+<code class="descclassname">Summarizer.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Summarizer.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Summarizer.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Drive the process from argument to output</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Summarizer.parse_arguments">
+<code class="descclassname">Summarizer.</code><code class="descname">parse_arguments</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Summarizer.html#parse_arguments"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Summarizer.parse_arguments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse command line arguments</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Summarizer.read_file">
+<code class="descclassname">Summarizer.</code><code class="descname">read_file</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Summarizer.html#read_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Summarizer.read_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the file at designated path and throw exception if unable to do so</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Summarizer.sanitize_input">
+<code class="descclassname">Summarizer.</code><code class="descname">sanitize_input</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Summarizer.html#sanitize_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Summarizer.sanitize_input" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Currently just a whitespace remover. More thought will have to be given</dt>
+<dd>with how    to handle sanitzation and encoding in a way that most text
+files can be successfully parsed</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="Summarizer.score_tokens">
+<code class="descclassname">Summarizer.</code><code class="descname">score_tokens</code><span class="sig-paren">(</span><em>filterd_words</em>, <em>sentence_tokens</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Summarizer.html#score_tokens"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Summarizer.score_tokens" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a frequency map based on the filtered list of words and
+uses this to produce a map of each sentence and its total score</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Summarizer.summarize">
+<code class="descclassname">Summarizer.</code><code class="descname">summarize</code><span class="sig-paren">(</span><em>ranks</em>, <em>sentences</em>, <em>length</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Summarizer.html#summarize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Summarizer.summarize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utilizes a ranking map produced by score_token to extract
+the highest ranking sentences in order after converting from
+array to string.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Summarizer.tokenize_content">
+<code class="descclassname">Summarizer.</code><code class="descname">tokenize_content</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Summarizer.html#tokenize_content"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Summarizer.tokenize_content" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Accept the content and produce a list of tokenized sentences,</dt>
+<dd>a list of tokenized words, and then a list of the tokenized words with
+stop words built from NLTK corpus and Python string class filtered out.</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">Summarizer</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, adsa.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
